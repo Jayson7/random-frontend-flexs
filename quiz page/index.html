@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Page</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f0f0f0;
+      }
+
+      .quiz-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .question {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .options {
+        list-style: none;
+        padding: 0;
+      }
+
+      .options label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .options input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      .submit-btn {
+        margin-top: 20px;
+      }
+
+      .result {
+        font-size: 20px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8 quiz-container">
+          <h1 class="question">Question 1: What is the capital of France?</h1>
+          <ul class="options">
+            <li>
+              <label>
+                <input type="radio" name="q1" value="paris" /> Paris
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q1" value="london" /> London
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="radio" name="q1" value="berlin" /> Berlin
+              </label>
+            </li>
+          </ul>
+          <button class="btn btn-primary submit-btn">Submit</button>
+          <p class="result"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include Bootstrap JS (Optional) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      // Add JavaScript to handle the quiz submission and display results here
+      $(document).ready(function () {
+        $(".submit-btn").click(function () {
+          var selectedOption = $("input[name='q1']:checked").val();
+          if (selectedOption === "paris") {
+            $(".result").text("Correct! Paris is the capital of France.");
+          } else {
+            $(".result").text("Incorrect. The correct answer is Paris.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
